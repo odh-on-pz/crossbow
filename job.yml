@@ -1,0 +1,28 @@
+!Job
+target: !Target
+  head: a06165d4c39dadc72a7930f81c5e327b34fb7896
+  email: unknown
+  branch: main
+  remote: https://github.com/odh-on-pz/arrow.git
+  github_repo: odh-on-pz/arrow
+  version: 18.0.0.dev92
+  r_version: 18.0.0.100000092
+  no_rc_version: 18.0.0.dev92
+  no_rc_r_version: 18.0.0.100000092
+  no_rc_semver_version: 18.0.0-dev92
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+tasks:
+  wheel-cp39-ppc64le: !Task
+    name: wheel-cp39-ppc64le
+    ci: github
+    template: python-wheels/github.ppc64le.yml
+    artifacts:
+    - pyarrow-18.0.0.dev92-cp39-cp39-linux_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.9'
+      wheel_platform_tag: linux_ppc64le
+    branch: build-12-github-wheel-cp39-ppc64le
+    commit: 8ef468f84d0d456abcab071cea9d9a34309acc00
+params: {}
+branch: build-12
